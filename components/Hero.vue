@@ -2,7 +2,8 @@
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
-    gsap.registerPlugin(ScrollTrigger);
+if (process.client) {
+    gsap.registerPlugin(ScrollTrigger);    
 
     onMounted(() => {
         const parallaxItems = document.querySelectorAll('.parallax-item')
@@ -26,7 +27,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
             smoothMouse.x = lerp(smoothMouse.x, mouse.x, smoothRatio)
             smoothMouse.y = lerp(smoothMouse.y, mouse.y, smoothRatio)
 
-            parallaxItems.forEach((item) => {
+            parallaxItems.forEach((item:any) => {
                 const itemSpeed = item.dataset.speed
 
                 gsap.set(item, {
@@ -52,10 +53,8 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
             mouse.x = ((e.clientX / window.innerWidth) * 2) - 1
             mouse.y = ((1- (e.clientY / window.innerHeight)) * 2) - 1
         })
-
-        console.log('mounted')
     })
-
+}
 
 </script>
 
