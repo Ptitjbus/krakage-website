@@ -1,86 +1,214 @@
 <script setup lang="ts">
 import gsap from 'gsap';
-import ScrollTrigger from 'gsap/ScrollTrigger';
 
-if (process.client) {
-    gsap.registerPlugin(ScrollTrigger);    
+let landingStore = useUiStore();
+let isParalax = false; 
 
-    onMounted(() => {
-        const parallaxItems = document.querySelectorAll('.parallax-item')
-        const parallaxSpeed = {
-            x: 40,
-            y: 20
-        }
-        const smoothRatio = 0.03
+onMounted(() => {
+    const parallaxItems = document.querySelectorAll('.parallax-item')
+    const parallaxSpeed = {
+        x: 40,
+        y: 20
+    }
+    const smoothRatio = 0.03
 
-        const mouse = {
-            x: 0,
-            y: 0
-        }
+    const mouse = {
+        x: 0,
+        y: 0
+    }
 
-        const smoothMouse = {
-            x: 0,
-            y: 0
-        }
+    const smoothMouse = {
+        x: 0,
+        y: 0
+    }
 
-        gsap.ticker.add(() => {
+    let tl = gsap.timeline()
+
+    gsap.ticker.add(() => {
+        // Smooth mouse transition if parallax
+        if (isParalax) {
             smoothMouse.x = lerp(smoothMouse.x, mouse.x, smoothRatio)
             smoothMouse.y = lerp(smoothMouse.y, mouse.y, smoothRatio)
+        }
+        parallaxItems.forEach((item:any) => {
+            const itemSpeed = item.dataset.speed
 
-            parallaxItems.forEach((item:any) => {
-                const itemSpeed = item.dataset.speed
-
-                gsap.set(item, {
-                    x: smoothMouse.x * parallaxSpeed.x * itemSpeed,
-                    y: smoothMouse.y * parallaxSpeed.y * itemSpeed,
-                    scale: 1.1
-                });
-            })
+            gsap.set(item, {
+                x: smoothMouse.x * parallaxSpeed.x * itemSpeed,
+                y: smoothMouse.y * parallaxSpeed.y * itemSpeed,
+            });
         })
+    })    
 
-        gsap.to('.hero-inner', {
-            yPercent : 80,
-            ease: 'none',
-            scrollTrigger: {
-                markers : true,
-                trigger: '.hero',
-                start: 'top top',
-                scrub: true
-            }
-        });
+    tl.to('.hero-inner', {
+        yPercent : 80,
+        ease: 'none',
+        scrollTrigger: {
+            trigger: '.hero',
+            start: 'top top',
+            scrub: true
+        }
+    });
 
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = ((e.clientX / window.innerWidth) * 2) - 1
-            mouse.y = ((1- (e.clientY / window.innerHeight)) * 2) - 1
-        })
+    
+    tl.fromTo(".herologo", { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power3.inOut', onComplete: () => {
+            isParalax = true;
+            landingStore.displayHeader = true;
+        }
+    });
+    tl.fromTo(".hero-inner", { opacity: 1, scale: 1 }, { opacity: 0.8, scale: 1.1, duration: 1.6, ease: 'power2.inOut' }, 1);    
+    tl.fromTo(".herologo", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: 'power3.inOut' }, 1);
+
+    window.addEventListener('mousemove', (e) => {
+        mouse.x = ((e.clientX / window.innerWidth) * 2) - 1
+        mouse.y = ((1- (e.clientY / window.innerHeight)) * 2) - 1
     })
-}
+})
 
 </script>
 
 <template>
-    <div class="hero w-full h-[100vh] bg-amber-100 overflow-clip">
-        <div class="hero-inner relative h-full">
+    <div class="hero w-full h-[100vh] bg-blue-900 overflow-clip">
+        <div class="hero-inner relative h-full ">
             <NuxtImg
-                src="image/frame_akkoro.png"
-                class="parallax-item absolute inset-0 object-cover w-full h-full"
-                data-speed="-1"
+                quality="80"
+                format="webp"
+                src="image/background.png"
+                class="parallax-item parallax-class"
+                data-speed="0"
             />
-            <NuxtImg 
-                src="image/frame_trees.png" 
-                class="parallax-item absolute inset-0 object-cover w-full h-full"
-                data-speed="-0.5"    
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/flare-2.png"
+                class="parallax-item parallax-class"
+                data-speed="0.1"
             />
-            <NuxtImg 
-                src="image/frame_fujiko.png" 
-                class="parallax-item absolute inset-0 object-cover w-full h-full"
-                data-speed="0.5"    
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/stick-right-2.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.2"
             />
-            <NuxtImg 
-                src="image/frame_foreground.png" 
-                class="parallax-item absolute inset-0 object-cover w-full h-full"
-                data-speed="1"    
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/sheet.png"
+                class="parallax-item parallax-class"
+                data-speed="0.5"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/tentacle-right-2.png"
+                class="parallax-item parallax-class"
+                data-speed="0.3"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/tentacles-right-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.3"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/tentacle-left-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.3"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/tentacle-left-2.png"
+                class="parallax-item parallax-class"
+                data-speed="0.3"
+            />
+            
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/stick-left-2.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.1"
+            />            
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/stick-right-1.png"
+                class="parallax-item parallax-class"
+                data-speed="0.2"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/stick-left-1.png"
+                class="parallax-item parallax-class"
+                data-speed="0.4"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/paddle-left-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.6"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/paddle-right-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.5"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/flare-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.2"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/bubble-left-1.png"
+                class="parallax-item parallax-class"
+                data-speed="0.05"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/bubble-right-2.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.05"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/bubble-right-1.png"
+                class="parallax-item parallax-class"
+                data-speed="-0.08"
+            />
+            <NuxtImg
+                quality="80"
+                format="webp"
+                src="image/bubble-1.png"
+                class="parallax-item parallax-class"
+                data-speed="0.1"
             />
         </div>
+        <NuxtImg
+            src="svg/logo.svg"
+            class="herologo absolute-center opacity-0 pointer-events-none z-20"
+            width="204"
+            height="251"
+        />
     </div>
 </template>
+
+<style>
+.parallax-class {
+    @apply absolute inset-0 object-cover w-full h-full pointer-events-none;
+}
+</style>
