@@ -7,14 +7,14 @@ let isHeaderDisplayed = ref(false);
 const onEnter = (el:Element,done:CallableFunction) => {
     const headerLeft = el.querySelector('.headerleft');
     const headerRight = el.querySelector('.headerRight');
+    const headerTop = el.querySelector('.headerTop');
 
-    let tl = gsap.timeline()
+    let tl = gsap.timeline({delay: 0.5})
     tl.fromTo(headerLeft, {
         x: -200
     }, {
         x: 0,
         duration: 1.6,
-        delay: 0.6,
         ease: 'power3.inOut',
         onComplete: () => {
             done();
@@ -25,7 +25,16 @@ const onEnter = (el:Element,done:CallableFunction) => {
     }, {
         x: 0,
         duration: 1.6,
-        delay: 0.6,
+        ease: 'power3.inOut',
+        onComplete: () => {
+            done();
+        }
+    },0)
+    tl.fromTo(headerTop, {
+        y: -200
+    }, {
+        y: 0,
+        duration: 1.6,
         ease: 'power3.inOut',
         onComplete: () => {
             done();
@@ -45,9 +54,10 @@ onMounted(() => {
 
 <template>
     <Transition @enter="onEnter">
-        <header class="header fixed header z-20 text-white h-screen flex justify-between w-full" v-show="isHeaderDisplayed">
-            <HeaderLeft class="headerleft backdrop-blur-sm" />
-            <HeaderRight class="headerRight backdrop-blur-sm" />    
+        <header class="header absolute text-white h-screen flex justify-between w-full" v-show="isHeaderDisplayed">
+            <HeaderTop class="absolute headerTop z-20 backdrop-blur-sm top-0  " />
+            <HeaderLeft class="fixed z-20 headerleft left-0 backdrop-blur-sm" />
+            <HeaderRight class="fixed z-20 headerRight right-0 backdrop-blur-sm" />    
         </header>
     </Transition>
 </template>

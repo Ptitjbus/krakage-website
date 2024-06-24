@@ -22,6 +22,9 @@ onMounted(() => {
         y: 0
     }
 
+    const {$splitting } = useNuxtApp();
+    $splitting();
+
     let tl = gsap.timeline()
 
     gsap.ticker.add(() => {
@@ -58,6 +61,20 @@ onMounted(() => {
     });
     tl.fromTo(".hero-inner", { opacity: 1, scale: 1 }, { opacity: 0.8, scale: 1.1, duration: 1.6, ease: 'power2.inOut' }, 1);    
     tl.fromTo(".herologo", { opacity: 1 }, { opacity: 0, duration: 0.6, ease: 'power3.inOut' }, 1);
+    tl.fromTo(".title-hero", { opacity: 0 }, { opacity: 1, duration: 1.6, ease: 'power3.inOut' }, 1);
+    tl.fromTo('.title-hero .char', {
+        x: -10,
+        y : 20,
+        opacity: 0
+    }, {
+        x: 0,
+        y : 0,
+        opacity: 1,
+        duration: 0.8,
+        stagger: 0.015,
+        ease: 'power3.out',
+    },1.6)
+    
 
     window.addEventListener('mousemove', (e) => {
         mouse.x = ((e.clientX / window.innerWidth) * 2) - 1
@@ -204,6 +221,11 @@ onMounted(() => {
             width="204"
             height="251"
         />
+        <div class="heroCaption absolute bottom-0 w-full left-0 px-28 py-20">
+            <p data-splitting class="title-hero text-white [&_.char]:opacity-0 opacity-0">
+                Plongez dans l'univers mystique de Utari
+            </p>
+        </div>
     </div>
 </template>
 

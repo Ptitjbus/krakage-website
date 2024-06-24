@@ -7,5 +7,16 @@
     .absolute-center{
         @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2    
     }
-    
+
+    .title-hero{
+        @apply uppercase text-[5.5rem] leading-none font-black select-none
+    }
+
+    .title-hero .char{
+        opacity: 0;
+    }
+
+    .title-section{
+        @apply uppercase text-[4.5rem] leading-none font-black select-none 
+    }    
 }

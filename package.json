@@ -16,10 +16,12 @@
     "gsap": "^3.12.5",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
+    "splitting": "^1.1.0",
+    "spltjs": "^1.1.0",
     "vue": "^3.4.27",
     "vue-router": "^4.3.2"
   },
-  "overrides": {
-    "vue": "latest"
+  "devDependencies": {
+    "@types/splitting": "^1.0.6"
   }
 }
