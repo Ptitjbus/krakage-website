@@ -69,9 +69,9 @@ onMounted(() => {
         </div>
         <div class="absolute inset-0">
             <NuxtImg quality="80" format="webp" src="image/Ainu-pattern.png" width="344" height="628"
-                class="ainu-pattern absolute top-[300px] sm:top-[200px] scale-[0.4] sm:scale-1 right-0 z-12  rotate-[-75deg] transform-gpu" />
+                class="ainu-pattern absolute top-[300px] sm:top-[200px] scale-[0.4] sm:scale-100 right-0 z-12  rotate-[-75deg] transform-gpu" />
             <NuxtImg quality="80" format="webp" src="image/Fujiko-pattern.png" width="554" height="212"
-                class="ainu-pattern-2 absolute top-[700px] sm:top-[200px] scale-50 sm:scale-1 z-12 transform-gpu"/>
+                class="ainu-pattern-2 absolute top-[700px] sm:top-[450px] scale-50 sm:scale-100 z-12 transform-gpu"/>
         </div>
     </div>
 </template>

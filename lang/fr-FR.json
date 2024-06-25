@@ -33,5 +33,17 @@
     "footer" : {
         "contact" : "Nous contacter",
         "legal" : "Mentions légales"
+    },
+    "krakageSection" : {
+        "uppertitle" : "Krakage en quelques mots",
+        "title1" : "Le",
+        "title2" : "studio",
+        "title3" : "français de jeux vidéo où les légendes prennent vie",
+        "description" : "Bienvenue chez Krakage, un studio de développement de jeux vidéo né de la passion pour la narration interactive et les aventures immersives. Depuis notre création, nous avons été motivés par un objectif clair : créer des jeux qui captivent les joueurs, les éduquent et les inspirent."
+    },
+    "menu": {
+        "studio" : "Krakage studio",
+        "game" : "Le jeu",
+        "contact" : "Contact"
     }
 }

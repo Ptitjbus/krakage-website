@@ -34,12 +34,9 @@ onMounted(() => {
             <p data-splitting class="title-trailer-section title-section text-dark-blue z-20 pb-8">
                 {{ $t('trailerSection.title') }}
             </p>
-            <CldVideoPlayer
-                width="1920"
-                height="1080"
-                src="https://res.cloudinary.com/dau53hmfi/video/upload/v1719270607/Utari-cutscene-FINAL_1_xbxflx.mp4"
-                fontFace="IroSans Arial Serif Pro"
-            />
+            <div class="relative" style="padding:56.25% 0 0 0">
+                <iframe src="https://player.vimeo.com/video/968271263?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" class="absolute top-0 left-0 w-full h-full" title="Utari first cutscene"></iframe>
+            </div>
         </div>
     </div>
 </template>

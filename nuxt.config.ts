@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@pinia/nuxt", "@nuxtjs/i18n", "@nuxtjs/cloudinary"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@pinia/nuxt", "@nuxtjs/i18n"],
   i18n: {
     locales: [
       {

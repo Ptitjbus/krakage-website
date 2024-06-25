@@ -33,5 +33,17 @@
     "footer" : {
         "contact" : "Contact us",
         "legal" : "Terms of use"
+    },
+    "krakageSection" : {
+        "uppertitle" : "Krakage in brief",
+        "title1" : "The French video game ",
+        "title2" : "studio",
+        "title3" : "where legends come to life",
+        "description" : "Welcome to Krakage, a game development studio born of a passion for interactive storytelling and immersive adventure. Since our inception, we've been driven by one clear goal: to create games that captivate, educate and inspire gamers."
+    },
+    "menu": {
+        "studio" : "Krakage studio",
+        "game" : "The game",
+        "contact" : "Contact"
     }
 }

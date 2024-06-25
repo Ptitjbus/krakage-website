@@ -2,7 +2,6 @@
     <div>
         <Header />
         <Hero />
-        <!-- <Menu /> -->
         <HeartSection />
         <TrailerSection />
         <GameplaySection />

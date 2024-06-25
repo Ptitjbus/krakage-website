@@ -50,6 +50,10 @@
         @apply text-[1rem] sm:text-[1.5rem] leading-none select-none font-IroSans
     }
 
+    .title-section-Iro{
+        @apply text-[2rem] sm:text-[4.5rem] leading-none select-none font-bold font-IroSans 
+    }
+
     p {
         @apply font-IroSans
     }

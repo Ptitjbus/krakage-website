@@ -1,9 +1,11 @@
 <template>
     <footer class="hidden sm:block flex flex-col text-black px-28 border">
         <div class="flex py-10 px-32 items-center justify-between border-b ">
-            <p class="text-2xl font-bold">
-                {{ $t('footer.contact') }}
-            </p>
+            <NuxtLink to="/contact" class="hover:text-[#FC2020]  transition-all z-20">
+                <p class="text-2xl font-bold">
+                    {{ $t('footer.contact') }}
+                </p>
+            </NuxtLink>            
             <NuxtImg
                 src="svg/krakage-icon.svg"
                 alt="Krakage"
@@ -45,6 +47,22 @@
             <p>
                 {{ $t('footer.legal') }}
             </p>
+        </div>
+    </footer>
+    <footer class="block sm:hidden text-black px-28 border">
+        <div class="flex flex-col items-center justify-center py-5">
+            <NuxtImg
+            src="svg/krakage-icon.svg"
+            alt="Krakage"
+            width="259"
+            height="72"
+            class="mb-2"
+            />
+            <NuxtLink to="/contact" class="hover:text-[#FC2020]  transition-all z-20">
+                <p class="text-xl font-bold">
+                    {{ $t('footer.contact') }}
+                </p>
+            </NuxtLink>
         </div>
     </footer>
 </template>
