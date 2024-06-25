@@ -40,7 +40,7 @@ onMounted(() => {
         })
     })
 
-    gsap.fromTo('.title-section .char', {
+    gsap.fromTo('.title-heart-section .char', {
         x: -10,
         y : 20,
         opacity: 0
@@ -52,8 +52,7 @@ onMounted(() => {
         stagger: 0.015,
         ease: 'power3.out',
         scrollTrigger: {
-            markers: true,
-            trigger: '.title-section',
+            trigger: '.title-heart-section',
             start: 'top bottom',
         },
     })
@@ -85,9 +84,9 @@ onMounted(() => {
 
 <template>
     <div class="heart-section bg-white h-[100vh] relative overflow-clip">
-        <div class="flex items-center h-full p-28">
-            <p data-splitting class="title-section text-dark-blue z-20 max-w-[900px]">
-                 Un jeu collaboratif au cœur de la culture aïnoue
+        <div class="flex items-center h-full px-4 sm:px-28 py-28">
+            <p data-splitting class="title-heart-section title-section text-dark-blue z-20 max-w-[900px]">
+                {{ $t('heartSection') }}
             </p>
         </div>
         <div class="heart-parent absolute inset-0">

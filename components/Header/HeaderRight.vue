@@ -10,9 +10,7 @@
         <div class="flex items-center justify-center p-5 w-full h-full"></div>
         <div class="flex items-center justify-center border-t p-5 w-full min-h-18">
             <div class="h-8 w-8 flex items-center justify-center">
-                <p>
-                    EN
-                </p>
+                <HeaderLangSwitcher />
             </div>
         </div>
     </div>

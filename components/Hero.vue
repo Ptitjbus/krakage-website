@@ -221,9 +221,9 @@ onMounted(() => {
             width="204"
             height="251"
         />
-        <div class="heroCaption absolute bottom-0 w-full left-0 px-28 py-20">
+        <div class="heroCaption absolute bottom-0 w-full left-0 px-4 sm:px-28 py-20">
             <p data-splitting class="title-hero text-white [&_.char]:opacity-0 opacity-0">
-                Plongez dans l'univers mystique de Utari
+                {{ $t('heroTitle') }}
             </p>
         </div>
     </div>

@@ -53,11 +53,18 @@ onMounted(() => {
 </script>
 
 <template>
-    <Transition @enter="onEnter">
-        <header class="header absolute text-white h-screen flex justify-between w-full" v-show="isHeaderDisplayed">
-            <HeaderTop class="absolute headerTop z-20 backdrop-blur-sm top-0  " />
-            <HeaderLeft class="fixed z-20 headerleft left-0 backdrop-blur-sm" />
-            <HeaderRight class="fixed z-20 headerRight right-0 backdrop-blur-sm" />    
+    <div class="hidden sm:block">
+        <Transition @enter="onEnter">
+            <header class="header absolute text-white h-screen flex justify-between w-full" v-show="isHeaderDisplayed">
+                <HeaderTop class="absolute headerTop z-20 backdrop-blur-sm top-0  " />
+                <HeaderLeft class="fixed z-20 headerleft left-0 backdrop-blur-sm" />
+                <HeaderRight class="fixed z-20 headerRight right-0 backdrop-blur-sm" /> 
+            </header>
+        </Transition>
+    </div>
+    <div class="block sm:hidden">
+        <header class="header fixed z-20 text-white h-screen flex justify-between w-full">
+            <HeaderTopMobile class="absolute headerTop z-20 backdrop-blur-sm top-0  " />
         </header>
-    </Transition>
+    </div>
 </template>

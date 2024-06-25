@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+/* @font-face {
+    font-family: 'Irosans';
+    src: url('~public/fonts/irosans-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  } */
+
+@layer base {
+    @font-face {
+    font-family: 'Irosans';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('/fonts/irosans-webfont.woff2') format('woff2');
+    }
+
+    @font-face {
+        font-family: 'Poleno';
+        font-style: normal;
+        font-weight: 600;
+        font-display: swap;
+        src: url('/fonts/poleno_semibold-webfont.woff2') format('woff2');
+    }
+}
+
+
 @layer utilities {
     
     .absolute-center{
@@ -9,7 +35,7 @@
     }
 
     .title-hero{
-        @apply uppercase text-[5.5rem] leading-none font-black select-none
+        @apply uppercase text-[3rem] sm:text-[5.5rem] leading-none font-black select-none font-Poleno
     }
 
     .title-hero .char{
@@ -17,6 +43,14 @@
     }
 
     .title-section{
-        @apply uppercase text-[4.5rem] leading-none font-black select-none 
+        @apply uppercase text-[2rem] sm:text-[4.5rem] leading-none select-none  font-Poleno 
     }    
+
+    .upper-title{
+        @apply text-[1rem] sm:text-[1.5rem] leading-none select-none font-IroSans
+    }
+
+    p {
+        @apply font-IroSans
+    }
 }

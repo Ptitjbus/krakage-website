@@ -4,8 +4,12 @@
         <Hero />
         <!-- <Menu /> -->
         <HeartSection />
-        <div class="h-[100vh] bg-white">
-
-        </div>
+        <TrailerSection />
+        <GameplaySection />
+        <CultureSection />
+        <CommunicationSection />
+        <WaveSection />
+        <ComunitySection />
+        <KrakageFooter />
     </div>
 </template>

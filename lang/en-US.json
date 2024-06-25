@@ -1,0 +1,37 @@
+{
+    "heroTitle" : "Dive into the mystical world of Utari",
+    "heartSection" : "A collaborative game at the heart of Ainu culture",
+    "trailerSection" : {
+        "uppertitle" : "Legend of Akkoro Kamui",
+        "title" : "Discover the legend of a fallen divinity"
+    },
+    "gameplaySection" : {
+        "uppertitle" : "Collaborative gameplay",
+        "title" : "Forge links and communicate for success",
+        "description" : "Utari invites you on a collaborative adventure where communication is key. Play as Fujiko or Akkoro Kamui and use light signals to communicate and progress together. Solve puzzles, explore the island and discover innovative means of communication to advance your quest. Each player brings unique skills to the table, and only by helping each other can you overcome obstacles."
+    },
+    "cultureSection" : {
+        "uppertitle" : "Ainu culture",
+        "title" : "Explore a forgotten culture",
+        "description" : "Soak up the richness of Ainu culture as you discover its traditions, customs and deep connection with nature. Utari brings this often-neglected heritage to light, offering players an immersive, educational experience. Explore the myths and legends of this ancient people and discover how they shaped the island of Nakajima and its inhabitants."
+    },
+    "communicationSection" : {
+        "uppertitle" : "Communication and immersion",
+        "title" : "Immerse yourself in a unique sensory experience",
+        "description" : "Experience a variety of means of communication, from the light of Akkoro to voice filters, to fully immerse yourself in the world of Utari. Feel every detail thanks to breathtaking graphics and a mesmerizing soundtrack. With innovative gameplay mechanics and a deep storyline, Utari promises an unforgettable adventure where communication plays a central role."
+    },
+    "comunitySection" :{
+        "uppertitle" : "Growing community",
+        "title" : "Find out what they say about Utari",
+        "firstCommentAuthor" : "Jeuxvideo.com",
+        "firstComment" : "An incredible game, the graphics are magnificent and the story is captivating. I highly recommend Utari.",
+        "secondCommentAuthor" : "Gamekult",
+        "secondComment" : "A game out of the ordinary, with innovative game mechanics and a deep story. A real favorite.",
+        "thirdCommentAuthor" : "IGN",
+        "thirdComment" : "Utari is a unique experience, combining culture and gameplay in an unprecedented way. A game not to be missed."
+    },
+    "footer" : {
+        "contact" : "Contact us",
+        "legal" : "Terms of use"
+    }
+}
