@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     provider: "none",
   },
   nitro: {
+    preset: 'netlify',
     prerender: {
       ignore: ["/_ipx"],
     },
