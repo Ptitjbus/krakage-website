@@ -3,7 +3,16 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   devtools: { enabled: true },
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@pinia/nuxt", "@nuxtjs/i18n"],
+  image: {
+    provider: "none",
+  },
+  nitro: {
+    prerender: {
+      ignore: ["/_ipx"],
+    },
+  },
   i18n: {
+    restructureDir: false,
     locales: [
       {
         code: 'fr',
